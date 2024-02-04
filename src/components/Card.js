@@ -14,6 +14,10 @@ const Card = () => {
   const dispatch = useDispatch();
   console.log("card", loading, data, error);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   useEffect(() => {
     dispatch(travelRequest());
   }, []);
@@ -22,18 +26,17 @@ const Card = () => {
     <div className="card-container">
       {data.length > 0 &&
         data.map((post) => (
-           
-          <Link to={`/item/${post.id}`} key={post.id} className="card">
+          <Link to={`/item/${post.id}`} key={post.id} className="card" onClick={scrollToTop}>
             <div className="image">
-                <img src={`https://picsum.photos/200?random=${post.id}`}/> 
+              <img src={`https://picsum.photos/200?random=${post.id}`} />
             </div>
             <div className="content">
               <div className="descrip">
                 <div className="title">
-                    <h3>{post.title}</h3>
+                  <h3>{post.title}</h3>
                 </div>
                 <div className="des">
-                    <p>{post.body}</p>
+                  <p>{post.body}</p>
                 </div>
               </div>
               <div className="arrow">
