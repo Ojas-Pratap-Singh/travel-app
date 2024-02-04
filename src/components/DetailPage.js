@@ -26,18 +26,17 @@ const DetailPage = () => {
     <div className="detail-page">
       <h1>Post Number : {id} </h1>
       <div className="detailCard">
-        
-          <img src={`https://picsum.photos/200?random=${postDetails.id}`} />
-          <div>
-               <p className="about">{postDetails.body}
-               {postDetails.body}
-               {postDetails.body}
-               {postDetails.body}</p>
-
-          </div>
-       
+        <img src={`https://picsum.photos/200?random=${postDetails.id}`} />
+        <div>
+          <p className="about">
+            {postDetails.body}
+            {postDetails.body}
+            {postDetails.body}
+            {postDetails.body}
+          </p>
+        </div>
       </div>
-      <h2 >{postDetails.title}</h2>
+      <h2>{postDetails.title}</h2>
       <h1>More Post</h1>
     </div>
   );

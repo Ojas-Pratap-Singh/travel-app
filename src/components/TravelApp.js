@@ -12,7 +12,7 @@ import store from "../redux/store";
 // import Card from "./Card";
 const TravelApp = () => {
   const { loading, data, error } = useSelector((state) => state);
-//   console.log(loading, data, error);
+  //   console.log(loading, data, error);
 
   const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const TravelApp = () => {
 
   useEffect(() => {
     dispatch(travelRequest());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="section2">
@@ -36,19 +36,16 @@ const TravelApp = () => {
           <input placeholder="search here..." />
         </div>
         <div>
-            
-                {/* {loading && <p>Loading...</p>}
-                {error && <p>Error: {error}</p>}
-                {data.length > 0 && (
+          {loading && <p className="errr">Loading...</p>}
+          {error && <p className="errr">Error: {error}</p>}
+          {/* {data.length > 0 && (
                   <div className="card-container">
                     {data.map((post) => (
                       <Card key={post.id} post={post} />
                     ))}
                   </div>
-                )}
-             */}
+                )} */}
         </div>
-        
       </div>
     </div>
   );
